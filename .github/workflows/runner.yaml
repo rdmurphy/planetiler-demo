@@ -1,0 +1,19 @@
+name: Tilemaker
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Download Planetiler jar
+        run: wget https://github.com/onthegomap/planetiler/releases/latest/download/planetiler.jar
+
+      - name: Run Planetiler
+        run: java -Xmx1g -jar planetiler.jar --download --area=california
