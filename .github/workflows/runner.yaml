@@ -17,3 +17,9 @@ jobs:
 
       - name: Run Planetiler
         run: java -Xmx1g -jar planetiler.jar --download --area=us/california
+
+      - name: Upload the .mbtiles file
+        uses: actions/upload-artifact@v3
+        with:
+          name: output
+          path: data/output.mbtiles
