@@ -16,4 +16,4 @@ jobs:
         run: wget https://github.com/onthegomap/planetiler/releases/latest/download/planetiler.jar
 
       - name: Run Planetiler
-        run: java -Xmx1g -jar planetiler.jar --download --area=california
+        run: java -Xmx1g -jar planetiler.jar --download --area=us/california
